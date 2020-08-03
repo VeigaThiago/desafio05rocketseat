@@ -1,5 +1,20 @@
 import { uuid } from 'uuidv4';
 
+export interface TransactionDTO {
+  title: string;
+  value: string;
+  type: 'income' | 'outcome';
+}
+
+export interface FinalTransaction{
+  transactions: Transaction[];
+  balance: {
+    income: number;
+    outcome: number;
+    total: number;
+  };
+}
+
 class Transaction {
   id: string;
 
